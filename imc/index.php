@@ -30,14 +30,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         else if($sexo == "feminino") {
             $gordura_corporal = gorduraMulher($cintura, $quadril, $pescoco, $altura);
         }
+        $gordura_corporal = number_format($gordura_corporal, 2);
         $imc = $peso / ($altura * $altura);
-        $imc = number_format($imc, 3);
+        $imc = number_format($imc, 2);
 
         if($imc < 18.50){
             $color = "#6FB4EA";#ABAIXO
             $peso = "Abaixo do Normal";
         }
-        else if($imc >= 18.50 && $imc <=24.99) {
+        else if($imc >= 18.50 && $imc <=24.99) {       
             $color = "#7EC395";#NORMAL
             $peso = "Normal";
         }
@@ -129,8 +130,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                             }
                         ?>
                     </div>
+                    <?php
+                    if(isset($gordura_corporal)){
+                        echo "<h3 id='alert'>Porcentual de Gordura: $gordura_corporal%</h3>";
+                      }
+                    else {
+                        echo "<h3 id='alert'>Porcentual de Gordura:%</h3>";
+                    }
+                    ?>
 
-                    <h3 id="alert">AVISO-IMC</h3>
+
+
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, voluptatum earum est
                         sed fugiat magnam animi accusantium commodi, perferendis odio exercitationem tempore ullam
                         aspernatur consequatur nesciunt amet natus doloribus? Cupiditate! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit officia quos delectus amet, veritatis exercitationem? Autem aspernatur doloribus adipisci mollitia sed laborum impedit ipsum. Atque nulla odio temporibus sed optio!</p>
