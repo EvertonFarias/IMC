@@ -69,15 +69,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMC</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 </head>
 
 <body>
 
-<header>
-    <div id="div-title">
-                    <h1 id="title">Calculo de IMC</h1>
-    </div>
+    <header>
+        <div id="div-title">
+            <h1 id="title">Calculo de IMC</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="templates/sobre-nos.php">Sobre Nós</a></li>
@@ -86,39 +88,50 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
         </nav>
     </header>
 
-        <div id="content">
+    <div id="content">
 
 
-            <div id="main">
-                <form action="index.php" method="get" id="form">
-                    <label for="sexo">SEXO</label>
-                    <select id="sexo" name="sexo">
-                        <option value="" disabled selected hidden>Selecione o seu sexo</option>
-                        <option value="feminino" <?php if(isset($_GET['sexo']) && $_GET['sexo'] == 'feminino') echo 'selected'; ?>>Feminino</option>
-                        <option value="masculino" <?php if(isset($_GET['sexo']) && $_GET['sexo'] == 'masculino') echo 'selected'; ?>>Masculino</option>
-                    </select>
-                    <label for="idade">IDADE:</label>
-                    <input type="number" id="idade" name="idade" placeholder="Digite a sua idade" value="<?php if(isset($_GET['idade'])) echo $_GET['idade']; ?>">
-                    <label for="altura">ALTURA (cm):</label>
-                    <input type="number" step="0.01" id="altura" name="altura" placeholder="Digite sua altura" value="<?php if(isset($_GET['altura'])) echo $_GET['altura']; ?>">
-                    <label for="peso">PESO</label>
-                    <input type="number" step="0.01" id="peso" name="peso" placeholder="Digite seu peso" value="<?php if(isset($_GET['peso'])) echo $_GET['peso']; ?>">
-                    <label for="cintura">CINTURA (cm):</label>
-                    <input type="number" step="0.01" id="cintura" name="cintura" placeholder="Digite a medida de sua cintura" value="<?php if(isset($_GET['cintura'])) echo $_GET['cintura']; ?>">
-                    <label for="quadril">QUADRIL (cm):</label>
-                    <input type="number" step="0.01" id="quadril" name="quadril" placeholder="Digite a medida de seu quadril" value="<?php if(isset($_GET['quadril'])) echo $_GET['quadril']; ?>">
-                    <label for="pescoco">PESCOÇO (cm):</label>
-                    <input type="number" step="0.01" id="pescoco" name="pescoco" placeholder="Digite a medida de seu pescoço" value="<?php if(isset($_GET['pescoco'])) echo $_GET['pescoco']; ?>">
+        <div id="main">
+            <form action="index.php" method="get" id="form">
+                <label for="sexo">SEXO</label>
+                <select id="sexo" name="sexo">
+                    <option value="" disabled selected hidden>Selecione o seu sexo</option>
+                    <option value="feminino" <?php if(isset($_GET['sexo']) && $_GET['sexo']=='feminino' )
+                        echo 'selected' ; ?>>Feminino</option>
+                    <option value="masculino" <?php if(isset($_GET['sexo']) && $_GET['sexo']=='masculino' )
+                        echo 'selected' ; ?>>Masculino</option>
+                </select>
+                <label for="idade">IDADE:</label>
+                <input type="number" id="idade" name="idade" placeholder="Digite a sua idade"
+                    value="<?php if(isset($_GET['idade'])) echo $_GET['idade']; ?>">
+                <label for="altura">ALTURA (cm):</label>
+                <input type="number" step="0.01" id="altura" name="altura" placeholder="Digite sua altura"
+                    value="<?php if(isset($_GET['altura'])) echo $_GET['altura']; ?>">
+                <label for="peso">PESO</label>
+                <input type="number" step="0.01" id="peso" name="peso" placeholder="Digite seu peso"
+                    value="<?php if(isset($_GET['peso'])) echo $_GET['peso']; ?>">
+                <label for="cintura">CINTURA (cm):</label>
+                <input type="number" step="0.01" id="cintura" name="cintura"
+                    placeholder="Digite a medida de sua cintura"
+                    value="<?php if(isset($_GET['cintura'])) echo $_GET['cintura']; ?>">
+                <label for="quadril">QUADRIL (cm):</label>
+                <input type="number" step="0.01" id="quadril" name="quadril"
+                    placeholder="Digite a medida de seu quadril"
+                    value="<?php if(isset($_GET['quadril'])) echo $_GET['quadril']; ?>">
+                <label for="pescoco">PESCOÇO (cm):</label>
+                <input type="number" step="0.01" id="pescoco" name="pescoco"
+                    placeholder="Digite a medida de seu pescoço"
+                    value="<?php if(isset($_GET['pescoco'])) echo $_GET['pescoco']; ?>">
 
-                    <input id="calc-button" type="submit" value="CALCULAR">
-                </form>
+                <input id="calc-button" type="submit" value="CALCULAR">
+            </form>
 
-                <a href="index.php"><input id="clear-button" type="submit" value="LIMPAR"></a> <!-- botão de limpar aq-->
-                <div id="result-main">
-                    <div id="result-content">
-                        <h2>IMC CALCULADO:</h2>
-                        <div id="imc-result" style="background-color: <?=$color?>;">
-                            <?php
+            <a href="index.php"><input id="clear-button" type="submit" value="LIMPAR"></a> <!-- botão de limpar aq-->
+            <div id="result-main">
+                <div id="result-content">
+                    <h2>IMC CALCULADO:</h2>
+                    <div id="imc-result" style="background-color: <?=$color?>;">
+                        <?php
                                 if(isset($imc)) {
                                     echo "<p id='imc'>IMC: $imc</p>";
                                     }
@@ -127,13 +140,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
                                 }
                                 ?>
 
-                            <?php
+                        <?php
                                 if(isset($status)) {
                                     echo "<p id='peso'>$status</p>";
                                     }
                                 ?>
-                        </div>
-                        <?php
+                    </div>
+                    <?php
                             if(isset($gordura_corporal)){
                                 echo "<h3 id='alert'>Porcentual de Gordura: $gordura_corporal%</h3>";
                               }
@@ -144,17 +157,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
                                 echo "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam beatae totam non ipsam dolorem provident numquam temporibus dolorum ea aspernatur aliquam esse architecto, molestias incidunt est, reprehenderit quas ad assumenda.</p>";
                             }
                             else{
-                                echo "<p id='imc'>$description</p>";
+                                echo "<p>$description</p>";
                             }
 
                             ?>
 
-                            
 
-                    </div>
-                </div>
                     <div id="imc-table">
-
                         <div class="imc-color" id="abaixo">
                             <p>ABAIXO DO NORMAL</p>
                         </div>
@@ -173,17 +182,111 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
                         <div class="imc-color" id="obesidade3">
                             <p>OBESIDADE III</p>
                         </div>
+                    </div>
 
                 </div>
+
             </div>
+            <div id="chart_div" style="width: 900px; height: 500px; background-color: #0F0F0F"></div>
 
         </div>
 
 
+    </div>
 
-                            
+
+
+
+
+
 
 
 </body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', { 'packages': ['corechart'] });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+
+    function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+            ['Gordura', <?=$gordura_corporal?>],
+            ['Massa Magra e Resíduos Corporais', <?=(100-$gordura_corporal)?>],
+
+        ]);
+
+        function setChartOptions() {
+        var screenWidth = window.innerWidth;
+        var options = {
+            'title': '',
+            'titleTextStyle': {
+                'color': 'white'
+            },
+            'width': 425,
+            'height': 300,
+            'backgroundColor': 'transparent',
+            'color': "white",
+            'legend': {
+                'textStyle': {
+                    'color': 'white'
+                }
+            }
+        };
+
+    // Se a largura da tela for menor ou igual a 1760px, ajuste a largura do gráfico
+
+    if (screenWidth <= 1800 && screenWidth >1600) {
+        options.width = 350;
+    }
+    else if (screenWidth < 1600) {
+        options.width = 700;
+        options.height = 700;
+
+
+    }
+    else if (screenWidth <= 600) {
+        options.width = 400;
+        options.height = 400;
+
+
+    }
+
+    else if (screenWidth <= 400) {
+        options.width = 200;
+        options.height = 200;
+
+
+    }
+    else if (screenWidth <= 280 && screenWidth >399) {
+        options.width = 100;
+        options.height = 100;
+
+
+    }
+
+    return options;
+}
+
+// Use a função setChartOptions para definir as opções do gráfico
+var options = setChartOptions();
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+
+
+
+
 
 </html>

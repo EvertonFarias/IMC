@@ -6,6 +6,17 @@
     margin: 0px;
 }
 
+#chart_div {
+    width: 0px !important;
+    height: 300px !important;
+    position: absolute !important;
+    left: 110%;
+    top: 0%;
+
+}
+
+
+
 body {
     background: #0F0F0F;
     color: white;
@@ -18,6 +29,7 @@ header {
     max-width: 100%;
     min-height: 10vh;
     padding: 10px 0;
+    margin-bottom: 40px;
     box-shadow: 0px 3px 1px 1px #00000040;
     display: flex;
     flex-direction: column;
@@ -26,7 +38,7 @@ header {
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding-bottom: 0;
 }
 
 nav ul li {
@@ -165,7 +177,7 @@ form select:active {
 #result-main {
     background: #202024;
     max-width: 100%;
-    height: 540px;
+    height: 575px;
     top: 182px;
     left: 324px;
     padding: 8px;
@@ -181,7 +193,7 @@ form select:active {
 #result-content {
     
     width: 100%; 
-    height: 80%; 
+    height: 100%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -206,9 +218,15 @@ h2 {
 
 
 }
-p#imc {
-    margin: 15px;
+h3#alert{
+    padding: 5px;
+
 }
+p#imc {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
  p#decription {
     margin: 5px
 
@@ -227,14 +245,14 @@ p#imc {
 }
 
 #imc-table{
-    position: absolute;
-    min-width: 250px;
+    position: static;
+    min-width: 200px;
     min-height: 200px;
     justify-content: center;
     align-items: center;
     top: 0%;
     right: -50%;
-    margin: 50px;
+    margin-top: 5px;
     gap:7.64px;
     text-align: center;
 
@@ -299,17 +317,45 @@ p#imc {
 
 }
 
-@media only screen and (max-width: 1479px){
-    #imc-table {
-        display: none;
+@media only screen and (max-width: 1600px){
 
+    #chart_div {
+
+        top: 150%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+
+    } 
+    #content {
+        margin-left: auto;
+        margin: auto;
     }
 
 
 }
-@media only screen and (max-width: 880px){
+
+@media only screen and (max-width: 1450px){
+
+    #chart_div {
+        top: 150%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+
+    } 
+
+
+
+
+}
+
+
+@media only screen and (max-width: 900px){
     *{
         padding: 0;
+    }
+    #chart_div {
+        top: 220%;
+        left: -15%;
     }
 
     #main {
@@ -347,10 +393,23 @@ p#imc {
     }
     
 
+    
+
 
 }
+@media only screen and (max-width: 800px){
+    *{
+        padding: 0;
+    }
+    #chart_div {
+        left: -25%;
+    }
+}
 @media only screen and (max-width: 450px){
+    #chart_div {
 
+        display: none;
+    }
     #main {
         flex-direction: column;
         padding: 0px;
@@ -370,6 +429,7 @@ p#imc {
         left: 207px;
         }
 
+
 }
 @media only screen and (max-width: 360px){
 
@@ -380,6 +440,10 @@ p#imc {
         width: 320px;
 
 
+    }
+    #chart_div {
+
+        display: none;
     }
 
 }
@@ -434,6 +498,7 @@ p#imc {
     }
     h3#alert {
         font-size: 16px;
+        
     }
     form {
         width: 250px;
