@@ -130,13 +130,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
             <div id="result-main">
                 <div id="result-content">
                     <h2>IMC CALCULADO:</h2>
+
                     <div id="imc-result" style="background-color: <?=$color?>;">
                         <?php
                                 if(isset($imc)) {
                                     echo "<p id='imc'>IMC: $imc</p>";
                                     }
                                 else {
-                                    echo "<p id='imc'>TESTE IMC</p>";
+                                    echo "<p id='imc'></p>";
                                 }
                                 ?>
 
@@ -157,7 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
                                 echo "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam beatae totam non ipsam dolorem provident numquam temporibus dolorum ea aspernatur aliquam esse architecto, molestias incidunt est, reprehenderit quas ad assumenda.</p>";
                             }
                             else{
-                                echo "<p>$description</p>";
+                                echo "<p id='description'>$description</p>";
                             }
 
                             ?>
@@ -244,31 +245,31 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
 
     // Se a largura da tela for menor ou igual a 1760px, ajuste a largura do gráfico
 
-    if (screenWidth <= 1800 && screenWidth >1600) {
-        options.width = 350;
+    if (screenWidth >1600 && screenWidth <= 1900 ) {
+        options.width = 450;
     }
-    else if (screenWidth < 1600) {
+    else if (screenWidth > 900 && screenWidth < 1600) {
+        options.width = 900;
+        options.height = 900;
+
+
+    }
+    else if (screenWidth > 600 && screenWidth < 1600) {
         options.width = 700;
         options.height = 700;
 
 
     }
-    else if (screenWidth <= 600) {
+    else if (screenWidth > 400 && screenWidth <= 600) {
+        options.width = 600;
+        options.height = 600;
+
+
+    }
+
+    else if (screenWidth > 280 && screenWidth <= 400) {
         options.width = 400;
         options.height = 400;
-
-
-    }
-
-    else if (screenWidth <= 400) {
-        options.width = 200;
-        options.height = 200;
-
-
-    }
-    else if (screenWidth <= 280 && screenWidth >399) {
-        options.width = 100;
-        options.height = 100;
 
 
     }
