@@ -129,39 +129,33 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
             <a href="index.php"><input id="clear-button" type="submit" value="LIMPAR"></a> <!-- botão de limpar aq-->
             <div id="result-main">
                 <div id="result-content">
-                    <h2>IMC CALCULADO:</h2>
+                    <?php if (isset($imc) && isset($status)): ?>
+                        <h2>IMC CALCULADO:</h2>
+                        <div id="imc-result" style="background-color: <?=$color?>;"
+                            <p></p>
+                            <p id ='imc'>IMC: <?=$imc?></p>
+                            <p id='peso'><?=$status?></p>
+                        </div>
 
-                    <div id="imc-result" style="background-color: <?=$color?>;">
-                        <?php
-                                if(isset($imc)) {
-                                    echo "<p id='imc'>IMC: $imc</p>";
-                                    }
-                                else {
-                                    echo "<p id='imc'></p>";
-                                }
-                                ?>
-
-                        <?php
-                                if(isset($status)) {
-                                    echo "<p id='peso'>$status</p>";
-                                    }
-                                ?>
-                    </div>
+                    <?php else: ?>
+                        <h2>GRAUS DO IMC:</h2>
+                    <?php endif;?>
                     <?php
                             if(isset($gordura_corporal)){
                                 echo "<h3 id='alert'>Porcentual de Gordura: $gordura_corporal%</h3>";
                               }
                             else {
-                                echo "<h3 id='alert'>Percentual de Gordura:%</h3>";
+                                echo "<h3 id='alert'></h3>";
                             }
                             if($description == ""){
-                                echo "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam beatae totam non ipsam dolorem provident numquam temporibus dolorum ea aspernatur aliquam esse architecto, molestias incidunt est, reprehenderit quas ad assumenda.</p>";
+                                echo "<p style='display: none;''></p>";
                             }
                             else{
                                 echo "<p id='description'>$description</p>";
                             }
 
                             ?>
+
 
 
                     <div id="imc-table">
