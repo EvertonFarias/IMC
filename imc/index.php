@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
         <div id="main">
             <form action="index.php" method="get" id="form">
                 <label for="sexo">SEXO</label>
-                <select id="sexo" name="sexo">
+                <select id="sexo" name="sexo" required>
                     <option value="" disabled selected hidden>Selecione o seu sexo</option>
                     <option value="feminino" <?php if(isset($_GET['sexo']) && $_GET['sexo']=='feminino' )
                         echo 'selected' ; ?>>Feminino</option>
@@ -103,25 +103,25 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
                 </select>
                 <label for="idade">IDADE:</label>
                 <input type="number" id="idade" name="idade" placeholder="Digite a sua idade"
-                    value="<?php if(isset($_GET['idade'])) echo $_GET['idade']; ?>">
+                    value="<?php if(isset($_GET['idade'])) echo $_GET['idade']; ?>" required>
                 <label for="altura">ALTURA (cm):</label>
                 <input type="number" step="0.01" id="altura" name="altura" placeholder="Digite sua altura"
-                    value="<?php if(isset($_GET['altura'])) echo $_GET['altura']; ?>">
+                    value="<?php if(isset($_GET['altura'])) echo $_GET['altura']; ?>" required>
                 <label for="peso">PESO</label>
                 <input type="number" step="0.01" id="peso" name="peso" placeholder="Digite seu peso"
-                    value="<?php if(isset($_GET['peso'])) echo $_GET['peso']; ?>">
+                    value="<?php if(isset($_GET['peso'])) echo $_GET['peso']; ?>" required>
                 <label for="cintura">CINTURA (cm):</label>
                 <input type="number" step="0.01" id="cintura" name="cintura"
                     placeholder="Digite a medida de sua cintura"
-                    value="<?php if(isset($_GET['cintura'])) echo $_GET['cintura']; ?>">
+                    value="<?php if(isset($_GET['cintura'])) echo $_GET['cintura']; ?>" required>
                 <label for="quadril">QUADRIL (cm):</label>
                 <input type="number" step="0.01" id="quadril" name="quadril"
                     placeholder="Digite a medida de seu quadril"
-                    value="<?php if(isset($_GET['quadril'])) echo $_GET['quadril']; ?>">
+                    value="<?php if(isset($_GET['quadril'])) echo $_GET['quadril']; ?>" required>
                 <label for="pescoco">PESCOÇO (cm):</label>
                 <input type="number" step="0.01" id="pescoco" name="pescoco"
                     placeholder="Digite a medida de seu pescoço"
-                    value="<?php if(isset($_GET['pescoco'])) echo $_GET['pescoco']; ?>">
+                    value="<?php if(isset($_GET['pescoco'])) echo $_GET['pescoco']; ?>" required>
 
                 <input id="calc-button" type="submit" value="CALCULAR">
             </form>
