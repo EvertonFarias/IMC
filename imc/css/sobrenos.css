@@ -1,0 +1,92 @@
+* {
+    margin: 0%;
+    top: 0px;
+    background-color: #0F0F0F;
+}
+
+h1{
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    background-color: #202024;
+    color: white;
+    max-width: 100%;
+    min-height: 10vh;
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 40px;
+    box-shadow: 0px 3px 1px 1px #00000040
+    
+    
+
+}
+
+h2 {
+    color: #fff;
+    max-width: 750.27px;
+    max-height: 600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 40px 20px;
+    gap: 62px;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    left: 20%;
+    
+}
+
+
+h3 {
+    color: white;
+    max-width: 750.27px;
+    max-height: 600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 40px 20px;
+    gap: 62px;
+    position: relative;
+    text-align: center;
+    font-size: 23px;
+    
+    
+    
+}
+
+p{
+    color: white;
+    max-width: 750.27px;
+    max-height: 300px;
+    margin: auto;
+    display: contents;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px 40px 20px;
+    gap: 62px;
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+    left: 25%;
+    
+}
+
+div{
+    color: #fff;
+    max-width: 750.27px;
+    max-height: 600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 40px 20px;
+    gap: 62px;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    left: 15%;
+    
+}
