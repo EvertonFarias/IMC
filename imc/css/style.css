@@ -318,6 +318,26 @@ p#imc {
     text-align: center;
 
 }
+#sm-p{
+    color: #fff;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 28px;
+    margin: auto;
+    width: 40%;
+    
+}
+#sn-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.sn-content{
+    text-align: center;
+}
 
 @media only screen and (max-width: 1700px){
 
@@ -412,6 +432,10 @@ p#imc {
         position: static;
         margin-left: 10%;
     }
+    #sm-p{
+        width: 80%;
+        
+    }
 }
 @media only screen and (max-width: 450px){
 
@@ -443,6 +467,12 @@ p#imc {
         padding: 5px 5px;
         font-size: 12px;
     }
+    #sm-p{
+        font-size: 20px;
+        width: 80%;
+        
+    }
+
     h1#title {
         padding-bottom: 10px;
         padding-top: 20px;
