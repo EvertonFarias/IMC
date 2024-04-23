@@ -1,54 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre nós</title>
-    <link rel="stylesheet" href="./sobrenos.css"
-</head>
-<body>
-    <h1>
-        Sobre nós
-    </h1>
-    <h2>
-        Quem somos?
-    </h2>
-    <h3>
-    Somos um grupo de seis indivíduos focados no desenvolvimento de soluções. Nossa iniciativa surgiu da ideia de criar um projeto para avaliação do Índice de Massa Corporal (IMC), uma métrica crucial para a saúde.
-    Nosso objetivo é desenvolver um sistema de IMC abrangente e acessível para um público diversificado. Acreditamos na importância da saúde como base para uma vida plena e buscamos contribuir significativamente nesse campo.
-    Com habilidades variadas, desde programação, design e etc... Adotamos uma abordagem dinamica ao projeto. Nos comprometemos em oferecer uma solução precisa e intuitiva para auxiliar as pessoas a fazerem escolhas conscientes sobre sua saúde. 
-    </h3>
-    <h2>
-        funções:
-    </h2>
+<?php
+
+    $titlePage = "Sobre Nós";
+    $titleNav1 = "Cáculo do IMC";
+    $titleNav2 = "Saiba Mais";
+    $nav1 = "index.php";
+    $nav2 = "saiba-mais.php";
+    include_once("header.php");
+
+?>
+    <div id="sn-main">
+
+        <h2>
+            Quem somos?
+        </h2>
+        <br>
+        <p id = "sm-p">
+        Somos um grupo de seis indivíduos focados no desenvolvimento de soluções. Nossa iniciativa surgiu da ideia de criar um projeto para avaliação do Índice de Massa Corporal (IMC), uma métrica crucial para a saúde.
+        Nosso objetivo é desenvolver um sistema de IMC abrangente e acessível para um público diversificado. Acreditamos na importância da saúde como base para uma vida plena e buscamos contribuir significativamente nesse campo.
+        Com habilidades variadas, desde programação, design e etc... Adotamos uma abordagem dinamica ao projeto. Nos comprometemos em oferecer uma solução precisa e intuitiva para auxiliar as pessoas a fazerem escolhas conscientes sobre sua saúde. 
+        </p>
+        <br>
+        <h2>
+            Funções:
+        </h2>
     
 
-    <div id="Front-end">
-        <p> 
-                 Front-end:
-            <br>-Everton de Farias Ribeiro
-            <br>-Kleverton Filipe de Alcantara
-            </div>
-        </p>
-        <p>
-            <div id="Back-end">
-                   Back-end:
-                <br>-weslly Vitor Gomes Rocha Silva
-            </div>
-        </p>
-        <p>
-            <div id="pesquisa">
-                    Pesquisa:
-                <br>-Gustavo Santos Silva
-                <br>-Pedro Vinicius de Lima Jatobá
-            </div>
-        </p>
-        <p>
-            <div id="Documentação">
-                  Documentação:
-                <br>-Gabriel canuto de alencar
-            </div>
-            </p>
+
+        <div class = "sn-content">
+            <h3>Front-end:</h3>
+            <p class="sn-P">Everton De Farias Ribeiro</p>
+            <p class="sn-P">Kleverton Filipe De Alcantara</p>
+        </div>
+        <div class = "sn-content">
+            <h3>Back-End:</h3>
+            <p class="sn-P">Weslly Vitor Gomes Rocha Silva</p>
+        </div>
+        <div class = "sn-content">
+            <h3>Pesquisa:</h3>
+            <p class="sn-P">Gustavo Santos Silva</p>
+            <p class="sn-P">Pedro Vinicius de Lima Jatobá</p>
+        </div>
+        <div class = "sn-content">
+            <h3>Documentação:</h3>
+            <p class="sn-P">Gabriel Canuto De Alencar</p>
+        </div>
+    </div>
+    
    
 
 
