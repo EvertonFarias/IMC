@@ -1,5 +1,11 @@
 <?php
-include_once("data/data.php");
+$titlePage = "Cálculo de IMC";
+$titleNav1 = "Sobre Nós";
+$titleNav2 = "Saiba Mais";
+$nav1 = "sobre-nos.php";
+$nav2 = "saiba-mais.php";
+include_once("header.php");
+include_once("../data/data.php");
 
 function calcularGorduraCorporal($sexo, $cintura, $altura, $pescoco = 0, $quadril = 0) {
     if ($sexo == "masculino") {
@@ -37,6 +43,7 @@ $status = "";
 $color = "rgb(196, 174, 174)";
 $description = "";
 
+
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET['peso']) && isset($_GET['sexo']) && isset($_GET['cintura']) && isset($_GET['idade'])) {
     $sexo = $_GET['sexo'];
     $altura = $_GET['altura'] / 100;
@@ -60,33 +67,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
     $color = $statusIMC["color"];
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMC</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
-</head>
-
-<body>
-
-    <header>
-        <div id="div-title">
-            <h1 id="title">Calculo de IMC</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="templates/sobre-nos.php">Sobre Nós</a></li>
-                <li><a href="templates/saiba-mais.php">Saiba Mais</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <div id="content">
 
